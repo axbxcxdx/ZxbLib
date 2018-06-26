@@ -30,10 +30,13 @@ namespace ZxbLib.Collection.Helpers
             int newArrayLength = sourceArray.Length + arrayLengthDifference;
             var newArray = new T[newArrayLength];
 
-            Array.Copy(sourceArray, newArray, sourceIndex);
             int newArrayCopyedElementsIndex = sourceIndex;
+            Array.Copy(sourceArray, newArray, newArrayCopyedElementsIndex);
+
+            
             Array.ConstrainedCopy(insertedElements, 0, newArray, newArrayCopyedElementsIndex, insertedElements.Length);
             newArrayCopyedElementsIndex += insertedElements.Length;
+
             int remainedElementsIndex = sourceIndex + acturalLength;
             // 源数组末尾还有元素才进行拷贝
             if (remainedElementsIndex < sourceArray.Length)

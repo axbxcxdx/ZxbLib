@@ -7,7 +7,7 @@ namespace ZxbLib.Collection.Test
     public class ArrayHelperSpliceTest
     {
         [Fact]
-        public void InputArgumentsValidationTest()
+        public void ValidateInputArguments()
         {
             int[] anull = null;
             Assert.Throws<ArgumentNullException>(() => ArrayHelper.Splice(ref anull, 0, 0));
@@ -21,7 +21,7 @@ namespace ZxbLib.Collection.Test
         }
 
         [Fact]
-        public void TrancateOneElementTest()
+        public void TrancateOneElementButInputLengthIs2()
         {
             int[] a = { 1, 2, 3, 4, 5, 6 };
 
@@ -32,7 +32,7 @@ namespace ZxbLib.Collection.Test
         }
 
         [Fact]
-        public void TrancateTwoElementsTest()
+        public void TrancateTwoElements()
         {
             int[] a = { 1, 2, 3, 4, 5, 6 };
 
@@ -43,7 +43,7 @@ namespace ZxbLib.Collection.Test
         }
 
         [Fact]
-        public void TrancateAllElementsTest()
+        public void TrancateAllElements()
         {
             int[] a = { 1, 2, 3, 4, 5, 6 };
 
@@ -54,7 +54,7 @@ namespace ZxbLib.Collection.Test
         }
 
         [Fact]
-        public void TrancateArrayAndInsertNewElementsTest()
+        public void TrancateArrayAndInsertNewElements()
         {
             int[] a = { 1, 2, 3, 4, 5, 6 };
 

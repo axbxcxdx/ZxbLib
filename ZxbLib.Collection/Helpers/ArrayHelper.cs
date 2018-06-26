@@ -21,12 +21,12 @@ namespace ZxbLib.Collection.Helpers
             }
 
             // 如果要截取的元素个数大于从sourceIndex开始到数组结束的元素个数
-            int acturalLenth = (sourceIndex + length) > sourceArray.Length ? (sourceArray.Length - sourceIndex) : length;
+            int acturalLength = (sourceIndex + length) > sourceArray.Length ? (sourceArray.Length - sourceIndex) : length;
 
-            var deletedItems = new T[acturalLenth];
-            Array.ConstrainedCopy(sourceArray, sourceIndex, deletedItems, 0, acturalLenth);
+            var deletedItems = new T[acturalLength];
+            Array.ConstrainedCopy(sourceArray, sourceIndex, deletedItems, 0, acturalLength);
 
-            int arrayLengthDifference = insertedElements.Length - acturalLenth;
+            int arrayLengthDifference = insertedElements.Length - acturalLength;
             int newArrayLength = sourceArray.Length + arrayLengthDifference;
             var newArray = new T[newArrayLength];
 
@@ -34,7 +34,7 @@ namespace ZxbLib.Collection.Helpers
             int newArrayCopyedElementsIndex = sourceIndex;
             Array.ConstrainedCopy(insertedElements, 0, newArray, newArrayCopyedElementsIndex, insertedElements.Length);
             newArrayCopyedElementsIndex += insertedElements.Length;
-            int remainedElementsIndex = sourceIndex + acturalLenth;
+            int remainedElementsIndex = sourceIndex + acturalLength;
             // 源数组末尾还有元素才进行拷贝
             if (remainedElementsIndex < sourceArray.Length)
             {
